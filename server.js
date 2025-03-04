@@ -4,7 +4,9 @@ const crypto = require('crypto');
 require('dotenv').config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://simplebettingapp.netlify.app"
+  }));
 let userBalance = 1000;
 const generateProvablyFairRoll = (clientSeed, serverSeed) => {
 
